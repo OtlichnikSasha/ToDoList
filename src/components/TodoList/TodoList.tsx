@@ -1,8 +1,8 @@
 import React, { FC, useState } from 'react';
-import TodoItem from '../TodoItem/TodoItem';
+import { todos } from 'components/TodoList/todoList.data';
+import TodoItem from 'components/TodoItem/TodoItem';
 import { domAnimation, LazyMotion, motion } from 'framer-motion';
 import styles from './todo-list.module.scss';
-import { todos } from 'components/TodoList/todoList.data';
 
 type TodoList = {
   open: boolean

@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { ITask } from '@/types/ITask';
+import { ITask } from 'types/ITask';
 
 type ITasksContext = {
   tasks: ITask[],
@@ -7,7 +7,7 @@ type ITasksContext = {
 }
 
 export const initialTasksState: ITasksContext = {
-  tasks: [],
+  tasks: [{id: 1, name: "Today Tasks"}],
   addTask: () => true
 }
 

@@ -1,5 +1,5 @@
-import React, { FC, useState } from 'react';
-import { ITask } from '../../types/ITask';
+import React, { FC, memo, useState } from 'react';
+import { ITask } from 'types/ITask';
 import TodoList from '../TodoList/TodoList';
 import styles from "./task-item.module.scss"
 import clsx from 'clsx';
@@ -9,7 +9,7 @@ const chevron = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   />
   </svg>
 
-const TaskItem: FC<{ task: ITask }> = ({task}) => {
+const TaskItem: FC<{ task: ITask }> = memo(function TaskItem({task}){
   const [openTodos, setOpenTodos] = useState(false)
 
   const toggleOpenTodo = () => setOpenTodos(!openTodos)
@@ -33,6 +33,6 @@ const TaskItem: FC<{ task: ITask }> = ({task}) => {
       <TodoList open={openTodos} />
     </>
   );
-};
+});
 
 export default TaskItem;

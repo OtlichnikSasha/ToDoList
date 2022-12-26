@@ -1,7 +1,7 @@
 import React, { FC, PropsWithChildren, useState } from 'react';
 import { TaskContextProvider } from './tasks.context';
 import { NewsContextProvider } from './news.context';
-import { ITask } from '../types/ITask';
+import { ITask } from 'types/ITask';
 
 const Index: FC<PropsWithChildren> = ({children}) => {
   const [tasks, setTasks] = useState<ITask[]>([])

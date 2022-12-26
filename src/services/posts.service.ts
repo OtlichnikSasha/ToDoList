@@ -1,6 +1,6 @@
 import { http } from '../http/http';
 import { AxiosResponse } from 'axios';
-import { INewsResponse } from '@/types/INews';
+import { INewsResponse } from 'types/INews';
 
 export const PostsService = {
   async getAllPosts() {

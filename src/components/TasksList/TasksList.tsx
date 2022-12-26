@@ -1,6 +1,6 @@
-import React, { FC, useContext, useState } from 'react';
-import { TaskContext } from '../../context/tasks.context';
-import { NewsContext } from '../../context/news.context';
+import React, { useContext, useState } from 'react';
+import { TaskContext } from 'context/tasks.context';
+import { NewsContext } from 'context/news.context';
 import CustomCheckbox from '../ui/CustomCheckbox';
 import CreateTask from '../CreateTask/CreateTask';
 import TaskItem from '../TaskItem/TaskItem';

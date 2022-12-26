@@ -1,17 +1,14 @@
 import React, { FC } from 'react';
-import { ITodo } from '@/types/ITodo';
-import styles from './todo-item.module.scss';
+import { ITodo } from 'types/ITodo';
 import { Switch } from '@mui/material';
-import { SwitchUnstyled } from '@mui/base';
-import UseSwitchesCustom from '../ui/CustomSwitch';
 import clsx from 'clsx';
+import styles from './todo-item.module.scss';
 
 type TodoItemProps = {
   todo: ITodo
   index: number
   onChange: (id: number) => void
 }
-
 
 const TodoItem: FC<TodoItemProps> = ({todo, index, onChange}) => {
   const determinateBorderColor = () => {

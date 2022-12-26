@@ -53,7 +53,6 @@ const SwitchThumb = styled('span')`
   &.checked {
     transform: translateX(24px);
   
-
     &::before {
       background-image: url('data:image/svg+xml;utf8,
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -29,3 +29,7 @@ body{
   overflow-y: hidden;
   height: 100%;
 }
+
+.marquee-container .overlay:after, .marquee-container .overlay:before{
+  width: 0;
+}

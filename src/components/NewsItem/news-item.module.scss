@@ -5,8 +5,7 @@
   height: 100%;
   box-shadow: 0 0 3px #F4F4F4;
   margin-right: 15px;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
+  border-radius: 20px 20px 8px 8px;
 
   &_image{
     height: 70%;
@@ -27,7 +26,6 @@
 
   &_data{
     padding: 20px 10px;
-    border-radius: 8px;
 
     &_heading{
       font-size: 18px;

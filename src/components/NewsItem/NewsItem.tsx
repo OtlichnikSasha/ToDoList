@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
-import { INews } from '../../types/INews';
+import React, { FC, memo } from 'react';
+import { INews } from 'types/INews';
 import styles from './news-item.module.scss';
 
-const NewsItem: FC<{ news: INews }> = ({ news }) => {
+const NewsItem: FC<{ news: INews }> = memo(function NewsItem({ news }) {
   return (
       <article className={styles.news}>
         <div className={styles.news_image}>
@@ -19,6 +19,6 @@ const NewsItem: FC<{ news: INews }> = ({ news }) => {
 
       </article>
   );
-};
+});
 
 export default NewsItem;

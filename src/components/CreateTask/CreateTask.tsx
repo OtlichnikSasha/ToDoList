@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useContext, useState } from 'react';
 import { TextField } from '@mui/material';
 import styles from './create-task.module.scss';
-import { TaskContext } from '../../context/tasks.context';
+import { TaskContext } from 'context/tasks.context';
 
 const saveIcon =
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'>

@@ -1,17 +1,19 @@
 import React, { useContext } from 'react';
-import { PostsService } from '../../services/posts.service';
 import { useQuery } from 'react-query';
-import styles from './news.module.scss';
+import { PostsService } from 'services/posts.service';
+import { NewsContext } from 'context/news.context';
 import NewsItem from '../NewsItem/NewsItem';
-import { NewsContext } from '../../context/news.context';
 import Container from '../ui/Container/Container';
+import styles from './news.module.scss';
 import Marquee from 'react-fast-marquee';
 
 const News = () => {
-  const { data: newsResponse, isLoading, error } = useQuery({
+  const { data: newsResponse, isFetching: isLoading, error } = useQuery({
     queryKey: ['getPosts'],
     queryFn: () => PostsService.getAllPosts(),
   });
+
+  console.log('newsResponse', newsResponse);
 
   const { isNewsVisible } = useContext(NewsContext);
 
@@ -19,10 +21,14 @@ const News = () => {
     <>
       {isNewsVisible ?
         <Container>
-          <div style={{ fontSize: '45px', color: 'white' }}>
+          <div className={styles.heading}>
             Новости
           </div>
-          {newsResponse?.articles?.length ?
+          {error && !isLoading ? <h4 className={styles.error}>Что-то пошло не так...</h4> : <></> }
+
+          {isLoading && !error ? <div className={styles.loading}>Идёт загрузка...</div> : <></> }
+
+          {newsResponse?.articles?.length && !isLoading ?
             <section className={styles.news}>
               <Marquee pauseOnHover speed={150}>
                 {newsResponse.articles.slice(90).map((news) => (
@@ -30,7 +36,7 @@ const News = () => {
                 ))}
               </Marquee>
             </section>
-            : 'not-cool'}
+            : <h4 className={styles.not_found}>По вашему запросу ничего не нашлось :(</h4>}
         </Container>
         :
         <></>
