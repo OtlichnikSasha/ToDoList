@@ -1,0 +1,21 @@
+.todo_item{
+  width: 100%;
+  background: #282828;
+  box-shadow: 16px 16px 20px rgba(0, 0, 0, 0.15), -8px -8px 20px rgba(255, 255, 255, 0.05);
+  border-radius: 40px;
+  padding: 16px;
+  min-height: 200px;
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.todo_data{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+}

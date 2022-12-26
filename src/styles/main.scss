@@ -1,0 +1,31 @@
+@import "normalize";
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  width: 100vw;
+  height: 100%;
+  overflow-x: hidden;
+  background: #111;
+  font-family: 'Abhaya Libre', serif;
+}
+
+/* Скролл страницы справа */
+::-webkit-scrollbar {
+  background: #111;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  background: #555555;
+}
+
+.marquee-container{
+  padding: 20px 0;
+  overflow-y: hidden;
+  height: 100%;
+}

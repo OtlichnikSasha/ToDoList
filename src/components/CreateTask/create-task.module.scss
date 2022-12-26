@@ -1,0 +1,35 @@
+.input {
+  color: rgba(244, 244, 244, 100) !important;
+  width: 100%;
+
+  input{
+    background: #F4F4F4;
+    border-radius: 4px;
+  }
+}
+
+.create_task{
+  &__data{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__heading{
+    font-size: 20px;
+    color: #F4F4F4;
+    margin: 10px 0;
+  }
+}
+
+.icon{
+  width: 21px;
+  height: 21px;
+  cursor: pointer;
+
+  svg{
+    fill: #146ebe;
+    width: 100%;
+    height: 100%;
+  }
+}

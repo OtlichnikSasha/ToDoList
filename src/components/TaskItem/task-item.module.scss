@@ -1,0 +1,56 @@
+.task{
+  background: #282828;
+  box-shadow: 16px 16px 20px rgba(0, 0, 0, 0.15), -8px -8px 20px rgba(255, 255, 255, 0.05);
+  border-radius: 25px;
+  width: 100%;
+  padding: 14px 17px;
+
+  &__wrapper{
+    width: 100%;
+    border-left: 3px solid #A9A9A9;
+    border-radius: 3px;
+    padding-left: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &_text{
+      color: #F4F4F4;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    &_icon{
+      background: #F4F4F4;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 21px;
+      height: 21px;
+      transition: all .4s;
+      cursor: pointer;
+
+      &:hover{
+        backdrop-filter: blur(10px);
+        background: #f0f0f0;
+        transition: all .4s;
+      }
+
+      &_active{
+        svg{
+          transform: rotate(180deg);
+          transition: transform .4s;
+        }
+      }
+
+      svg{
+        fill: #282828;
+        width: 60%;
+        height: 60%;
+        transition: transform .4s;
+      }
+    }
+  }
+}
