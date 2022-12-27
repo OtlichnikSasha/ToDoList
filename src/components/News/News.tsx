@@ -8,12 +8,10 @@ import styles from './news.module.scss';
 import Marquee from 'react-fast-marquee';
 
 const News = () => {
-  const { data: newsResponse, isFetching: isLoading, error } = useQuery({
+  const { data: newsResponse } = useQuery({
     queryKey: ['getPosts'],
     queryFn: () => PostsService.getAllPosts(),
   });
-
-  console.log('newsResponse', newsResponse);
 
   const { isNewsVisible } = useContext(NewsContext);
 
@@ -24,11 +22,8 @@ const News = () => {
           <div className={styles.heading}>
             Новости
           </div>
-          {error && !isLoading ? <h4 className={styles.error}>Что-то пошло не так...</h4> : <></> }
 
-          {isLoading && !error ? <div className={styles.loading}>Идёт загрузка...</div> : <></> }
-
-          {newsResponse?.articles?.length && !isLoading ?
+          {newsResponse?.articles?.length ?
             <section className={styles.news}>
               <Marquee pauseOnHover speed={150}>
                 {newsResponse.articles.slice(90).map((news) => (
