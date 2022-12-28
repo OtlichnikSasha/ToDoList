@@ -23,11 +23,11 @@ const News = () => {
             Новости
           </div>
 
-          {newsResponse?.articles?.length ?
+          {newsResponse?.length ?
             <section className={styles.news}>
               <Marquee pauseOnHover speed={150}>
-                {newsResponse.articles.slice(90).map((news) => (
-                    <NewsItem news={news} key={`${news.publishedAt}-${news.source?.id}`} />
+                {newsResponse.slice(90).map((news) => (
+                    <NewsItem news={news} key={`${news.id}`} />
                 ))}
               </Marquee>
             </section>

@@ -25,9 +25,7 @@ const TodoItem: FC<TodoItemProps> = ({todo, index, onChange}) => {
     }
   };
 
-  const toggleCompleted = () => {
-    onChange(todo.id)
-  };
+  const toggleCompleted = () => onChange(todo.id)
 
   return (
     <div className={styles.todo_item}>

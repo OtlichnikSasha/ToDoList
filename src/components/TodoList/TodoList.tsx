@@ -1,8 +1,9 @@
-import React, { FC, useState } from 'react';
+import React, {FC, useState} from 'react';
 import { todos } from 'components/TodoList/todoList.data';
 import TodoItem from 'components/TodoItem/TodoItem';
 import { domAnimation, LazyMotion, motion } from 'framer-motion';
 import styles from './todo-list.module.scss';
+import {ITodo} from "types/ITodo";
 
 type TodoList = {
   open: boolean
@@ -19,7 +20,7 @@ const todoListVariant = {
 };
 
 const TodoListItem: FC<TodoList> = ({ open }) => {
-  const [todosList, setTodosList] = useState(todos);
+  const [todosList, setTodosList] = useState<ITodo[]>(todos);
 
   const changeTodoCompleted = (id: number) => {
     const todoUpdates = todos.map(todo => {

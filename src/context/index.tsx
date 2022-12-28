@@ -4,11 +4,10 @@ import { NewsContextProvider } from './news.context';
 import { ITask } from 'types/ITask';
 
 const Index: FC<PropsWithChildren> = ({children}) => {
-  const [tasks, setTasks] = useState<ITask[]>([])
+  const [tasks, setTasks] = useState<ITask[]>([{id: 1, name: "Today Task"}])
   const [isNewsVisible, setIsNewsVisible] = useState(true)
 
   const addTask = (newTask: ITask) => setTasks(tasks.concat(newTask))
-
   const toggleNewsVisible = () => setIsNewsVisible(!isNewsVisible)
 
   const newsValues = {

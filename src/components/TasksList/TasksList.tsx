@@ -7,6 +7,7 @@ import TaskItem from '../TaskItem/TaskItem';
 import styles from './tasks.module.scss';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Switch } from '@mui/material';
+import TodoListItem from "components/TodoList/TodoList";
 
 const settingsIcon = <svg width='29' height='30' viewBox='0 0 29 30' fill='none' xmlns='http://www.w3.org/2000/svg'>
   <path
@@ -18,8 +19,10 @@ const TasksList = () => {
   const { tasks } = useContext(TaskContext);
   const {toggleNewsVisible, isNewsVisible} = useContext(NewsContext)
   const [showSwitch, setShowSwitch] = useState(false)
+  const [openTodayTodos, setOpenTodayTodos] = useState(true)
 
   const toggleSwitch = () => setShowSwitch(!showSwitch)
+  const toggleTodayOpen = () => setOpenTodayTodos(!openTodayTodos)
 
   const changeNewsVisible = () => {
     toggleSwitch()
@@ -53,12 +56,14 @@ const TasksList = () => {
         </AnimatePresence>
 
         <div className={styles.action}>
-          <CustomCheckbox defaultChecked />
+          <CustomCheckbox defaultChecked onChange={toggleTodayOpen}/>
           <p className={styles.action__text}>Show Today Tasks</p>
         </div>
+        <TodoListItem open={openTodayTodos} />
+
         <div className={styles.tasks}>
-          {tasks.length ?
-            tasks.map((task) => (
+          {tasks.length > 1 ?
+            tasks.slice(1).map((task) => (
               <TaskItem task={task} key={task.id} />
             ))
             :
